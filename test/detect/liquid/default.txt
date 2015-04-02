@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>{{ title }} - {{ site.title }}</title>
+  </head>
+  <body>
+    <nav>
+      {% for page in site.pages %}
+        <a href="{{ page.url }}">{{ page.title }}</a>
+      {% endfor %}
+    </nav>
+
+    <h1>{{ title }}</h1>
+    <div class="page-description">{{ body }}</div>
+
+    {% for post in posts %}
+      <article>
+        <h2>{{ post.title }}</h2>
+        {{ post.body }}
+      </article>
+    {% endfor %}
+
+    {% for asset in assets %}
+      {% if asset.type == 'image' %}
+        <img src="{{ asset.url }}">
+      {% elsif asset.type == 'audio' %}
+        <audio><source src="{{ asset.url }}" type="{{ asset.content_type }}"></audio>
+      {% elsif asset.type == 'video' %}
+        <video><source src="{{asset.url}}" type="{{ asset.content_type }}"></video>
+      {% elsif asset.type == 'other' %}
+        <a href="{{asset.url}}">Download {{asset.filename}}</a></li>
+      {% endif %}
+    {% endfor %}
+
+    <footer>Copyright {{ site.date | date: "%Y" }}</footer>
+</body>
+</html>
