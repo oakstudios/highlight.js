@@ -15,9 +15,10 @@ function(hljs) {
     contains: [
       {
         className: 'expression',
+        relevance: 0,
         variants: [
             {begin: '{{', end: '}}'},
-            {begin: '{%', end: '%}'}
+            {begin: '{%', end: '%}', relevance: 10}
         ],
         keywords: EXPRESSION_KEYWORDS,
         contains: [
