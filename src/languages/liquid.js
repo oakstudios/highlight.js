@@ -7,7 +7,7 @@ Category: template
 */
 
 function(hljs) {
-  var EXPRESSION_KEYWORDS = 'for each in with if else elsif endif endunless endfor unless include capture';
+  var EXPRESSION_KEYWORDS = 'for each in with if else elsif endif endunless endfor unless include capture assign';
   return {
     aliases: ['liquid', 'html.liquid', 'html.liquid'],
     case_insensitive: true,
